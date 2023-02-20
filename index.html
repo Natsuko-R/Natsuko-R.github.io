@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <!-- 引入字体 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>001</title>
 </head>
+
 <body>
-    这是我的第一个静态页面
+    <header>
+        <div class="wrapper">
+            <div class="left">
+                <div>
+                    <img class="logo" src="./images/logo.svg">
+                </div>
+                <div class="info">
+                    <h1 class="title">We're<br>
+                        <span class="coming-soon">coming soon</span>
+                    </h1>
+                    <p class="para">Hello fellow shoppers! We're currently building our new fashion store.
+                        Add your email below to stay up-to-date with announcements and our launch deals.
+                        Email address
+                    </p>
+                    <form class="email-info">
+                        <!-- 一个required就能让浏览器自行判断 -->
+                        <input class="input" type="email" placeholder="Email Address" required autocomplete="aaa">
+                        <button class="btn" onclick="checkValid()">
+                            <img src="./images/icon-arrow.svg">
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+    </header>
 </body>
+
 </html>
