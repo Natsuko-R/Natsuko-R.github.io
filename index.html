@@ -2,42 +2,716 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <!-- 引入字体 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natsuko</title>
+
+    <!--=============== 引入站标 ===============-->
+    <link rel="icon" href="assets/img/icon1.svg" type="image/x-icon">
+
+    <!--=============== 引入在线图标 ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== 引入轮播图样式 ===============-->
+
+    <link rel="stylesheet" href="./assets/swiper-bundle.min.css">
+    <!--=============== 引入CSS样式 ===============-->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- 引入在线字体 -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
-    <header>
-        <div class="wrapper">
-            <div class="left">
-                <div>
-                    <img class="logo" src="./images/logo.svg">
+
+    <!--=============== HEADER ===============-->
+    <header class="header" id="home">
+        <img class="profile" title="Created by Midjourney using promps." src="./assets/img/profile.png">
+    </header>
+
+    <!--=============== NAVBAR ===============-->
+    <nav class="nav" data-nav>
+        <ul class="nav-list">
+
+            <li class="nav-logo">Natsuko</li>
+
+            <li class="nav-link"><a href="#home">HOME</a></li>
+            <li class="nav-link"><a href="#about">ABOUT</a></li>
+
+            <li class="nav-link nav-link-demo">
+                <a href="javascript:;">
+                    DEMO
+                    <i class='bx bxs-chevron-down'></i>
+                </a>
+                <ul class="demo-list">
+                    <li class="demo-item"><a href="#demo">MUSIC</a></li>
+                    <li class="demo-item"><a href="#calendar">CALENDAR</a></li>
+                    <li class="demo-item"><a href="#swiper">SWIPER</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-link"><a href="#document">DOC</a></li>
+            <li class="nav-link"><a href="#contact">CONTACT</a></li>
+
+            </span></li>
+
+            <!-- 切换暗黑模式 -->
+            <li class="dark-theme">
+                <span><i class='bx bx-sun'></i>Theme</span>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!--=============== MUSIC中点击查看大图遮罩层 ===============-->
+    <div id="mask-wrap">
+        <div id="mask"></div>
+        <img id="big-img" src="">
+    </div>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section container show" id="about">
+            <h2 class="section-title">
+                ABOUT
+            </h2>
+
+            <div class="about-container">
+                <!--==================== INTRO ====================-->
+                <div class="about-intro">
+                    <!--==================== HELLO ====================-->
+                    <div class="about-hello">
+                        <h1>Hi, <span class="hello-icon">👋</span>
+                            <br>I'm Natsuko,
+                            <br>a web developer
+                        </h1>
+                    </div>
+                    <!--==================== SKILL ====================-->
+                    <div class="skill-wrapper">
+                        <h1 class="skill-title">Software Skills</h1>
+
+                        <div class="skill-box">
+                            <div class="skill-type">
+                                <p>Html5</p>
+                                <p>90%</p>
+                            </div>
+                            <div class="skill-fill">
+                                <div class="skill-level" style="width:90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <div class="skill-type">
+                                <p>Css3</p>
+                                <p>85%</p>
+                            </div>
+
+                            <div class="skill-fill">
+                                <div class="skill-level" style="width:85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <div class="skill-type">
+                                <p>VUE</p>
+                                <p>65%</p>
+                            </div>
+                            <div class="skill-fill">
+                                <div class="skill-level" style="width:65%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <div class="skill-type">
+                                <p>Javascript</p>
+                                <p>70%</p>
+                            </div>
+                            <div class="skill-fill">
+                                <div class="skill-level" style="width:70%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <div class="skill-type">
+                                <p>AJAX</p>
+                                <p>82%</p>
+                            </div>
+                            <div class="skill-fill">
+                                <div class="skill-level" style="width:82%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info">
-                    <h1 class="title">We're<br>
-                        <span class="coming-soon">coming soon</span>
-                    </h1>
-                    <p class="para">Hello fellow shoppers! We're currently building our new fashion store.
-                        Add your email below to stay up-to-date with announcements and our launch deals.
-                        Email address
-                    </p>
-                    <form class="email-info">
-                        <!-- 一个required就能让浏览器自行判断 -->
-                        <input class="input" type="email" placeholder="Email Address" required autocomplete="aaa">
-                        <button class="btn" onclick="checkValid()">
-                            <img src="./images/icon-arrow.svg">
-                        </button>
-                    </form>
+
+                <!--==================== MODULE ====================-->
+                <div class="about-module">
+                    <!-- 也可以做成翻阅文件夹的样式 -->
+                    <nav>
+                        <div class="about-tab" data-about='about-one'>one</div>
+                        <div class="about-tab isActive" data-about='about-two'>two</div>
+                        <div class="about-tab" data-about='about-three'>three</div>
+                    </nav>
+
+                    <div class="about-item" id="about-one">
+                        <h1 class="module-title">本 网 站 实 现</h1>
+                        <div class="finished-list">
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>网页Favicon设计</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>响应式网页</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>右下角：回到顶部按钮</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>固定顶部导航栏</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>👋动态动画</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>点击放大 / 缩小图片</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>轮播图</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>自定义分页器样式</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>表单展示</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>收起 / 展开DOC子卡片</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>顶部导航下拉子菜单</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>底部链接hover后生长动画</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>滚动条、文字选中样式</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>GRID / FLEX</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>指定导航跳转</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>日历：三种样式显示不同日期</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>技能进度条</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>伪元素运用</span>
+                            </div>
+
+
+                            <!-- 计划中 -->
+                            <div class="finished">
+                                <i class='bx bx-loader'></i>
+                                <span>暗黑模式</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-loader'></i>
+                                <span>切换语言：中/英</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-loader'></i>
+                                <span>博客文章</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-item show" id="about-two">
+                        <h1 class="module-title">关 于 我</h1>
+                        <div class="bubble-list">
+                            <div class="bubble">
+                                <h3>设计</h2>
+                                    <p>半年素描，入门美术基础<br>
+                                        玩过figma，做过app原型图<br>
+                                        会C4D三维建模与渲染
+                                    </p>
+                            </div>
+                            <div class="bubble">
+                                <h3>语言</h2>
+                                    <p>英语：给留学生当过导游<br>
+                                        日语：勉强够和霓虹金聊天<br>
+                                        西语：读过原版书，未来继续
+                                    </p>
+                            </div>
+                            <div class="bubble">
+                                <h3>休闲</h2>
+                                    <p>书籍电影音乐游戏四件套<br>
+                                        No book no life <br>
+                                        系统啃过许多大部头心理学教材
+                                    </p>
+                            </div>
+                            <div class="bubble">
+                                <h3>运动</h2>
+                                    <p>2022是户外跑的第6年<br>
+                                        跑出了目前的最高记录：20KM <br>
+                                        希望未来能跑更远
+                                    </p>
+                            </div>
+                            <div class="bubble">
+                                <h3>编程</h2>
+                                    <p>2023把魔爪伸向编程 <br>
+                                        想以计算机语言为工具来实现形式更丰富的设计
+                                    </p>
+                            </div>
+                            <div class="bubble">
+                                <h3>自评</h2>
+                                    <p>技能树点得奇奇怪怪hhh <br>
+                                        好奇心驱动的学习者和实践者吧<br>
+                                        永远享受flow的心流状态
+                                    </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="about-item" id="about-three">
+                        <h1 class="module-title">项 目 总 结</h1>
+                        <div class="sum-content">
+                            本个人网站从构思到完成，共耗时 5 天，经历 3 次大型设计稿改动<br>
+                            100% 纯原生三件套实现<br>
+                            717 行 HTML , 1401 行 CSS , 205 行 JS<br>
+                            最后，再次感谢 <a href="https://github.com/" target="_blank">Github</a> 提供的免费静态页面服务
+                        </div>
+
+                    </div>
                 </div>
             </div>
-            <div class="right"></div>
+        </section>
+
+        <!--==================== DEMO ====================-->
+        <section class="demo section container" id="demo">
+            <h2 class="section-title">
+                DEMO
+            </h2>
+
+            <!--==================== MUSIC ====================-->
+            <section class="music-container" id="music">
+                <div class="L-Cohen">
+
+                    <!-- 原图 -->
+                    <img id="Cohen-img" src="./assets/img/Leonard Cohen-02.JPG">
+                    <!-- 放大后的图片 -->
+
+                    <div class="Cohen-info">
+                        <h2>Leonard Cohen</h2>
+                        <P>Leonard Norman Cohen was a Canadian singer-songwriter, poet, and novelist. Themes commonly
+                            explored throughout his work include faith and mortality, isolation and depression,
+                            redemption and betrayal, social and political conflict, and sexual and romantic love,
+                            desire, regret, and loss.
+                        </P>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4" class="thead-main">My favorite songs ever</th>
+                        </tr>
+                        <tr>
+                            <th colspan="1" class="thead-div">Singer</th>
+                            <th colspan="1" class="thead-div">The song</th>
+                            <!-- 顺序、倒序 -->
+                            <th colspan="1" class="thead-div">Year</th>
+                            <th colspan="1" class="thead-div">The album</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Can</td>
+                            <td>Mary, Mary So Contrary</td>
+                            <td>1969</td>
+                            <td>Monster Movie (Remastered)</td>
+                        </tr>
+                        <tr>
+                            <td>Old Man Canyon</td>
+                            <td>Hollow Tree</td>
+                            <td>2016</td>
+                            <td>Delirium</td>
+                        </tr>
+                        <tr>
+                            <td>Violent Femmes</td>
+                            <td>Kiss Off</td>
+                            <td>2007</td>
+                            <td>Rocket Science</td>
+                        </tr>
+                        <tr>
+                            <td>The Cure</td>
+                            <td>Sugar Girl</td>
+                            <td>2004</td>
+                            <td>Join the Dots: B-Sides & Rarities</td>
+                        </tr>
+                        <tr>
+                            <td>The Smiths</td>
+                            <td>There is a Light That Never Goes Out</td>
+                            <td>1986</td>
+                            <td>The Queen Is Dead</td>
+                        </tr>
+                        <tr>
+                            <td>Kraftwerk</td>
+                            <td>Computer Love</td>
+                            <td>1981</td>
+                            <td>Computer World</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Dylan</td>
+                            <td>Why try to change me now</td>
+                            <td>2015</td>
+                            <td>Shadows in the Night</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="1">Total</th>
+                            <th scope="row" colspan="1"></th>
+                            <td colspan="1"></td>
+                            <td colspan="1">7</td>
+                        </tr>
+                    </tfoot>
+                    <caption>Thank u music, always makes me smile and cry :)</caption>
+                </table>
+
+            </section>
+
+            <section class="demo-down">
+                <!--==================== CALENDAR ====================-->
+                <div class="calendar-container" id="calendar">
+
+                    <div class="calendar-bar">
+                        <div class='bx bx-chevrons-left' onClick="prev()"></div>
+                        <div class="month" id="month"></div>
+                        <div class="bx bx-chevrons-right" onClick="next()"></div>
+                    </div>
+
+                    <div class="week-days">
+                        <div>SUN</div>
+                        <div>MON</div>
+                        <div>TUE</div>
+                        <div>WED</div>
+                        <div>THU</div>
+                        <div>FRI</div>
+                        <div>SAT</div>
+                    </div>
+
+                    <div class="days" id="days"></div>
+                </div>
+
+                <!--==================== SWIPER ====================-->
+                <div class="swiper swiper-container" id="swiper">
+
+                    <div class="cards swiper-wrapper">
+
+                        <div class="card swiper-slide">
+                            <h1 class="card-title">module 1</h3>
+                        </div>
+                        <div class="card swiper-slide">
+                            <h1 class="card-title">module 2</h3>
+                        </div>
+                        <div class="card swiper-slide">
+                            <h1 class="card-title">module 3</h3>
+                        </div>
+
+                    </div>
+
+                    <!-- 小圆点 -->
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <!--==================== DOC. ====================-->
+        <section class="doc section container" id="document">
+            <h2 class="section-title">
+                DOC
+            </h2>
+
+            <div class="doc-container">
+                <div class="doc-list">
+
+                    <div class="doc-item" style="border-top-color: #bb5661;">
+                        <p class="doc-title" style="color: #bb5661;">HTML & structure</p>
+                        <a class="doc-link" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+                            HyperText Markup Language
+                        </a>
+                        <p class="doc-info">
+                            It can be applied to pieces of text to give them different meaning in a document...
+                        </p>
+                    </div>
+
+                    <div class="doc-item" style="border-top-color: #e0e987;">
+                        <p class="doc-title" style="color: #e0e987;">Javascript & control</p>
+                        <a class="doc-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                            target="_blank">
+                            Core programming language of W3
+                        </a>
+                        <p class="doc-info">
+                            A lightweight, interpreted, or just-in-time compiled programming language with first-class
+                            functions...
+                        </p>
+                    </div>
+
+                    <div class="doc-item" style="border-top-color: #42b883;">
+                        <p class="doc-title" style="color: #42b883;">HTTP & protocol</p>
+                        <a class="doc-link" href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">
+                            Hypertext Transfer Protocol
+                        </a>
+                        <p class="doc-info">
+                            Designed for communication between web browsers and web servers with a classical
+                            client-server model...
+                        </p>
+                    </div>
+
+                    <div class="doc-item" style="border-top-color: #08fdd8;">
+                        <p class="doc-title" style="color: #08fdd8;">Three.js & WebGL</p>
+                        <a class="doc-link" href="https://threejs.org/" target="_blank">
+                            Cross-browser JavaScript 3D library
+                        </a>
+                        <p class="doc-info">
+                            Using Three.js to create and display animated 3D computer graphics in a web browser
+                            using
+                            WebGL...
+                        </p>
+                    </div>
+
+                    <div class="doc-item" style="border-top-color: #61dafb;">
+                        <p class="doc-title" style="color: #61dafb;">react & Framework</p>
+                        <a class="doc-link" href="https://reactjs.org/docs/getting-started.html" target="_blank">
+                            Declarative and component-based
+                        </a>
+                        <p class="doc-info">
+                            Build encapsulated components that manage their own state, then compose them to make complex
+                            UIs...
+                        </p>
+                    </div>
+
+                    <div class="doc-item" style="border-top-color: #fd2155;">
+                        <p class="doc-title" style="color: #fd2155;">vue & Framework</p>
+                        <a class="doc-link" href="https://cn.vuejs.org/guide/introduction.html" target="_blank">
+                            Approachable, performant, versatile
+                        </a>
+                        <p class="doc-info">
+                            Truly reactive, compiler-optimized rendering system that rarely requires manual
+                            optimization...
+                        </p>
+                    </div>
+
+                    <div class="doc-item more-item" style="border-top-color: #8269bb;">
+                        <p class="doc-title" style="color: #8269bb;">axios & xhr</p>
+                        <a class="doc-link" href="https://www.axios-http.cn/en/docs/intro" target="_blank">
+                            Promise based HTTP client
+                        </a>
+                        <p class="doc-info">
+                            Axios is isomorphic, it can run in the browser and nodejs with the same codebase...
+                        </p>
+                    </div>
+
+                    <div class="doc-item more-item" style="border-top-color: #ffa500;">
+                        <p class="doc-title" style="color: #ffa500;">webstorm & ide</p>
+                        <a class="doc-link" href="https://www.jetbrains.com/webstorm/" target="_blank">
+                            An integrated environment
+                        </a>
+                        <p class="doc-info">
+                            Automating routine work and helping you handle complex tasks with ease...
+                        </p>
+                    </div>
+
+                    <div class="doc-item more-item" style="border-top-color: #7d99cd;">
+                        <p class="doc-title" style="color: #7d99cd;">CSS & style</p>
+                        <a class="doc-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+                            Cascading Style Sheets
+                        </a>
+                        <p class="doc-info">
+                            CSS is the code that styles web content, it basics walks through what you need to get
+                            started...
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="show-more">
+                    <span id="more-str">show more</span>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== FAKE-TO-CONTACT ====================-->
+        <section class="section container" id="contact">
+            <h2 class="section-title">
+                contact
+            </h2>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <section class="footer">
+
+        <!--==================== FOOTER-CONTACT ====================-->
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h1 class="contact-title">
+                    If you like what you see, let's work together !
+                </h1>
+                <p>You can reach me anytime via :</p>
+
+                <div class="contact-number">
+                    <img src="./assets/img/icon-phone.svg" alt="Phone 📞" class="contact-icon">
+                    <span>+86 156-4235-0312</span>
+                </div>
+
+                <div class="contact-email">
+                    <img src="./assets/img/icon-email.svg" alt="Email 📧" class="contact-icon">
+                    <!-- <span>shenjiaojun@gmail.com </span> -->
+                    <span> jiaojunshen@qq.com</span>
+                </div>
+
+            </div>
+
+            <div class="wechat">
+                <div class="wechat-code">
+                    <img src="./assets/img/wechat-code.png" class="wechat-img">
+                    <div class="wechat-info">
+                        <img src="./assets/img/wechat.svg" class="QRcode-icon">
+                        <span>WeChat QR code</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+
+        <!--==================== FOOTER-LINK ====================-->
+        <section class="footer-links-wrap container">
+
+            <div class="footer-social">
+                <h1 class="footer-title">Code</h1>
+
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-link" href="https://github.com/" target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://github.com/features/copilot" target="_blank">Copilot</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h1 class="footer-title">Browser</h1>
+
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-link" href="https://www.google.com" target="_blank">Chrome</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://tb-manual.torproject.org/installation/" target="_blank">Tor
+                            Browser</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://yandex.com" target="_blank">Yandex</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h1 class="footer-title">Design</h1>
+
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-link" href="https://www.behance.net/" target="_blank">Behance</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://dribbble.com/" target="_blank">Dribbble</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://www.pinterest.com/" target="_blank">Pinterest</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://www.artstation.com/" target="_blank">Artstation</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h1 class="footer-title">Social</h1>
+
+                <ul class="footer-links">
+                    <li>
+                        <a class="footer-link" href="https://www.youtube.com/" target="_blank">Youtube</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://www.reddit.com/" target="_blank">Reddit</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://www.quora.com/" target="_blank">Quora</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="https://telegram.org/" target="_blank">Telegram</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </section>
+
+        <!--==================== FOOTER-COPYRIGHT ====================-->
+        <div class="copyright">
+            <div class="container">© 2023 Natsuko. Design for you</div>
+        </div>
+    </section>
+
+    <!--=============== 回到顶部：按钮 ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bxl-upwork scrollup-icon'></i>
+    </a>
+
+    <!--=============== 引入轮播图 ===============-->
+    <script src="./assets/swiper-bundle.min.js"></script>
+    <!--=============== 引入JS ===============-->
+    <script src="./main.js"></script>
 </body>
 
 </html>
