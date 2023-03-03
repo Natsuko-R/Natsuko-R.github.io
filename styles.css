@@ -401,6 +401,11 @@ button {
   text-align: left;
 }
 
+.about-item abbr {
+  font-style: italic;
+  color: var(--first-green);
+}
+
 
 /*=============== DEMO ===============*/
 /*=============== DEMO-MUSIC ===============*/
@@ -765,24 +770,205 @@ tbody tr:hover {
 /*=============== 响应式设计：断点 ===============*/
 @media screen and (max-width: 480px) {
 
-  .demo-down,
-  table,
-  .about-module,
-  .skill-wrapper,
-  .nav {
-    display: none;
-  }
-
   .header {
-    margin-bottom: 0;
-  }
-
-  .music-container {
-    font-size: 80%;
+    margin-top: 6rem;
+    margin-bottom: initial;
   }
 
   .profile {
     width: 6rem;
+  }
+
+  .container {
+    margin: 0 2rem;
+  }
+
+  .mobile-nav-wrap {
+    font-family: var(--ff-main);
+  }
+
+  .mobile-nav {
+    font-weight: 700;
+    background-color: var(--second-green);
+    position: fixed;
+    top: 0;
+    /* 移到最右侧，通过left值控制模块显隐 */
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    padding: 6rem 0;
+    transition: .3s;
+    z-index: 200;
+  }
+
+  /* JS显示导航栏菜单。对应left值 */
+  .show-menu {
+    left: 0;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.5rem;
+  }
+
+  .nav-close {
+    position: absolute;
+    font-size: 2rem;
+    top: .9rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+
+  .mobile-link:hover,
+  .nav-close:hover {
+    color: var(--first-white);
+    transition: .3s;
+  }
+
+  .mobile-topbar-wrap {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  .tips {
+    background-color: var(--second-white);
+    color: var(--second-black);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+  }
+
+  .tips-text {
+    font-weight: 700;
+  }
+
+  #tips-close {
+    font-size: 2rem;
+  }
+
+  .mobile-topbar {
+    background-color: var(--second-black);
+    box-shadow: var(--box-shadow-2);
+    border-block: 1px var(--second-white) solid;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    font-size: 2rem;
+  }
+
+  .nav,
+  table,
+  .swiper-container,
+  .doc-info,
+  #contact,
+  .wechat {
+    display: none;
+  }
+
+  .about-hello {
+    margin-bottom: 2rem;
+  }
+
+  .skill-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-title {
+    font-size: 125%;
+    padding-bottom: 1rem;
+  }
+
+  .skill-box {
+    font-size: 90%;
+  }
+
+  .skill-level {
+    height: 6px;
+  }
+
+  .skill-fill {
+    padding: 4px;
+  }
+
+  .about-module nav {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-module {
+    margin-top: 2rem;
+  }
+
+  .about-item {
+    padding: 1.5rem;
+    line-height: 1.7;
+    max-height: 280px;
+    overflow-y: scroll;
+  }
+
+  .about-item::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+  }
+
+  .about-item::-webkit-scrollbar-thumb {
+    background-color: var(--third-grey);
+  }
+
+  .module-title {
+    font-size: 130%;
+    margin-bottom: 1rem;
+  }
+
+  .finished-list {
+    text-align: left;
+  }
+
+  .bubble-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bubble {
+    padding: 0 1rem;
+    font-size: 90%;
+  }
+
+  .bubble h3 {
+    writing-mode: horizontal-tb;
+    border: none;
+  }
+
+  #Cohen-img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .calendar-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    font-size: 80%;
+  }
+
+  .calendar-bar {
+    margin-bottom: 1rem;
+  }
+
+  .active-day {
+    padding: 0.2rem;
   }
 
   .doc-item {
@@ -790,53 +976,48 @@ tbody tr:hover {
     margin-bottom: 2rem;
   }
 
-  .doc-info {
-    display: none;
+  .doc {
+    margin-bottom: 4rem;
+  }
+
+  .footer-links-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
   }
 
   .footer-social {
-    margin-bottom: 1rem;
-  }
-
-  #Cohen-img {
-    width: 100%;
-  }
-
-  .container {
-    margin: 0 2rem;
+    margin-top: 1.5rem;
   }
 
   .contact-container {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 2rem;
+    top: -9rem;
   }
 
-  .contact-icon,
-  .QRcode-icon,
-  .contact-title,
-  .wechat-info {
-    display: none;
+  .contact-title {
+    margin-bottom: 0.8rem;
   }
 
   .contact-info {
-    gap: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.8rem;
   }
 
   .footer {
     padding-top: 8rem;
-    font-size: 90%;
-  }
-
-  .wechat-img {
-    max-width: 7rem;
   }
 
 }
 
 @media screen and (min-width: 481px) {
+
+  .mobile-nav-wrap {
+    display: none;
+  }
+
   .profile {
     width: 8rem;
   }
@@ -1196,7 +1377,7 @@ tbody tr:hover {
   }
 
   .wechat-img {
-    max-width: 10rem;
+    max-width: 9.5rem;
   }
 
   :root {
@@ -1250,12 +1431,6 @@ tbody tr:hover {
     margin-top: 2rem;
     padding: 2rem 3rem;
     font-size: 100%;
-  }
-
-  .finished-list {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(8, 1fr);
   }
 
   .about-tab {
@@ -1346,6 +1521,14 @@ tbody tr:hover {
 
 }
 
+@media screen and (min-width: 1090px) {
+  .finished-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .container {
     margin: 0 13rem;
@@ -1353,16 +1536,6 @@ tbody tr:hover {
 
   .about-hello {
     font-size: 200%;
-  }
-
-  .finished-list {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-
-  .bubble-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
   }
 
   .demo-down {
@@ -1384,6 +1557,20 @@ tbody tr:hover {
 
   .Cohen-info {
     padding: 4rem;
+  }
+
+}
+
+@media screen and (min-width: 1455px) {
+
+  .finished-list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .bubble-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
 }

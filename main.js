@@ -1,3 +1,39 @@
+/*=============== 控制小屏nav菜单显示/隐藏 ===============*/
+const navMobile = document.getElementById('mobile-nav'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
+
+/*===== 显示 =====*/
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMobile.classList.add('show-menu')
+    })
+}
+
+/*===== 隐藏 =====*/
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMobile.classList.remove('show-menu')
+    })
+}
+
+/*=============== 点击菜单上的link后，退出菜单面板 ===============*/
+const mobileLink = document.querySelectorAll('.mobile-link')
+
+// 点击每一个nav-link都会remove这个类show-menu
+function linkAction() {
+    navMobile.classList.remove('show-menu')
+}
+mobileLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+/*=============== 控制小屏tips弹窗 ===============*/
+const tips = document.getElementById('tips'),
+    tipsClose = document.getElementById('tips-close')
+
+tipsClose.addEventListener('click', () => tips.style.display = 'none')
+
+
 /*=============== 页面滚动后显示导航条 ===============*/
 const Navbar = document.querySelector("[data-nav]")
 

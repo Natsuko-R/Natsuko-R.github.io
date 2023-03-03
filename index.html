@@ -33,6 +33,43 @@
         <img class="profile" title="Created by Midjourney using promps." src="./assets/img/profile.png">
     </header>
 
+    <!--=============== 小屏下的nav菜单 ===============-->
+    <section class="mobile-nav-wrap">
+
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-links">
+                <li><a class="mobile-link" href=" #home">HOME</a></li>
+                <li><a class="mobile-link" href=" #about">ABOUT</a></li>
+                <li><a class="mobile-link" href=" #demo">MUSIC</a></li>
+                <li><a class="mobile-link" href=" #calendar">CALENDAR</a></li>
+                <li><a class="mobile-link" href=" #document">DOC</a></li>
+                <li><a class="mobile-link" href=" #footer">CONTACT</a></li>
+            </ul>
+
+
+            <!--=============== 导航栏关闭按钮  ===============-->
+            <div class="nav-close" id="nav-close">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+
+        <div class="mobile-topbar-wrap">
+            <!--=============== tips弹窗 ===============-->
+            <div class="tips" id="tips">
+                <span class="tips-text">Want better browsing experience ?<br> PC is recommended !</span>
+                <i class='bx bx-x' id="tips-close"></i>
+            </div>
+
+            <!--=============== 导航栏打开按钮 ===============-->
+            <div class="mobile-topbar">
+                <span>Natsuko</span>
+                <i class='bx bx-grid-alt nav-toggle' id="nav-toggle"></i>
+            </div>
+        </div>
+
+
+    </section>
+
     <!--=============== NAVBAR ===============-->
     <nav class="nav" data-nav>
         <ul class="nav-list">
@@ -57,13 +94,12 @@
             <li class="nav-link"><a href="#document">DOC</a></li>
             <li class="nav-link"><a href="#contact">CONTACT</a></li>
 
-            </span></li>
+
 
             <!-- 切换暗黑模式 -->
             <li class="dark-theme">
                 <span><i class='bx bx-sun'></i>Theme</span>
             </li>
-
         </ul>
     </nav>
 
@@ -153,12 +189,12 @@
                 <div class="about-module">
                     <!-- 也可以做成翻阅文件夹的样式 -->
                     <nav>
-                        <div class="about-tab" data-about='about-one'>one</div>
-                        <div class="about-tab isActive" data-about='about-two'>two</div>
+                        <div class="about-tab isActive" data-about='about-one'>one</div>
+                        <div class="about-tab" data-about='about-two'>two</div>
                         <div class="about-tab" data-about='about-three'>three</div>
                     </nav>
 
-                    <div class="about-item" id="about-one">
+                    <div class="about-item show" id="about-one">
                         <h1 class="module-title">本 网 站 实 现</h1>
                         <div class="finished-list">
                             <div class="finished">
@@ -168,6 +204,10 @@
                             <div class="finished">
                                 <i class='bx bx-check'></i>
                                 <span>响应式网页</span>
+                            </div>
+                            <div class="finished">
+                                <i class='bx bx-check'></i>
+                                <span>移动端下的菜单toggle</span>
                             </div>
                             <div class="finished">
                                 <i class='bx bx-check'></i>
@@ -251,7 +291,7 @@
                         </div>
                     </div>
 
-                    <div class="about-item show" id="about-two">
+                    <div class="about-item" id="about-two">
                         <h1 class="module-title">关 于 我</h1>
                         <div class="bubble-list">
                             <div class="bubble">
@@ -302,12 +342,11 @@
                     <div class="about-item" id="about-three">
                         <h1 class="module-title">项 目 总 结</h1>
                         <div class="sum-content">
-                            本个人网站从构思到完成，共耗时 5 天，经历 3 次大型设计稿改动<br>
-                            100% 纯原生三件套实现<br>
-                            717 行 HTML , 1401 行 CSS , 205 行 JS<br>
+                            本个人网站从构思到完成，共耗时 6 天，经历 3 次大型设计稿改动<br>
+                            纯原生三件套实现<br>
+                            <abbr>757</abbr> 行 HTML , <abbr>1588</abbr> 行 CSS , <abbr>241</abbr> 行 JS<br>
                             最后，再次感谢 <a href="https://github.com/" target="_blank">Github</a> 提供的免费静态页面服务
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -585,7 +624,7 @@
     </main>
 
     <!--==================== FOOTER ====================-->
-    <section class="footer">
+    <section class="footer" id="footer">
 
         <!--==================== FOOTER-CONTACT ====================-->
         <div class="contact-container">
