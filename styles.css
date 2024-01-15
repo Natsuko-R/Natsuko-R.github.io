@@ -670,17 +670,19 @@ tbody tr:hover {
   justify-content: space-between;
 }
 
-.wechat-code {
+.contact-code {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.wechat-info {
+.code-info {
   display: flex;
   justify-content: space-between;
+  color: var(--first-white);
 }
 
+/* change the color of svg by adding fill in path at svg file */
 .QRcode-icon {
   width: 20px;
 }
@@ -1026,7 +1028,6 @@ tbody tr:hover {
     font-size: 85%;
   }
 
-
   .nav-link-demo i {
     padding-left: 0;
   }
@@ -1198,11 +1199,11 @@ tbody tr:hover {
     margin-right: 0.5rem;
   }
 
-  .wechat {
+  .QRcode {
     margin-left: 2rem;
   }
 
-  .wechat-img {
+  .code-img {
     max-width: 8rem;
   }
 
@@ -1376,7 +1377,7 @@ tbody tr:hover {
     margin-right: 1rem;
   }
 
-  .wechat-img {
+  .code-img {
     max-width: 9.5rem;
   }
 
